@@ -28,16 +28,17 @@ fetch(url)
         newdiv.id = `new${i}`;
         newdiv.innerHTML += `<h2>${atitle}</h2>`;
         newdiv.innerHTML += `<p>${adesc}</p>`;
-        newdiv.innerHTML += `<a target="_blank" href='${ln[i].url}'>Read More</a>`;
-        newdiv.innerHTML += `<p>Author: ${author}</p>`;
+        newdiv.innerHTML += `<a id="link" target="_blank" href='${ln[i].url}'>Read More</a>`;
+        if (author !== null) newdiv.innerHTML += `<p>Author: ${author}</p>`;
         newdiv.innerHTML += `<p>Source: ${source}</p>`;
         // style
         newdiv.style.maxWidth = '20em';
         newdiv.style.maxHeight = '17em';
         newdiv.style.width = '20em';
         newdiv.style.height = '17em';
-        newdiv.style.backgroundColor = 'yellow';
-        newdiv.style.border = '0.3em solid';
+        newdiv.style.backgroundColor = '#8396C7';
+        newdiv.style.border = '0.2em solid';
+        newdiv.style.borderColor = '#000  ';
         newdiv.style.textDecoration = 'none';
       }
     }
