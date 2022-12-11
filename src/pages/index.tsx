@@ -2,6 +2,7 @@
 import axios from "axios";
 import { type NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link.js";
 import { useEffect, useState } from "react";
 import { env } from "../env/client.mjs";
 const Home: NextPage = () => {
@@ -39,43 +40,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <div className=" mt-4 grid grid-cols-3 gap-6 max-xl:grid-cols-2 max-md:grid-cols-1">
-          {articles.map((article, index) => {
-            let { title, description } = article;
-            if (title === "example") return;
-            if (title.length > 50) title = title.substring(0, 50) + "...";
-            if (description.length > 130)
-              description = description.substring(0, 130) + "...";
-            return (
-              <div
-                key={index}
-                className="h-92 w-96 justify-center rounded-lg border-2 border-black bg-gradient-to-b from-white to-gray-500 text-center shadow-2xl"
-              >
-                <a className="text-2xl">{title}</a>
-                <p>{description}</p>
-
-                <a
-                  href={article.url}
-                  className=" text-white"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  source{" "}
-                </a>
-                <a>
-                  - {article.source.name} author: {article.author}
-                </a>
-                <img
-                  src={article.urlToImage}
-                  width={100}
-                  height={100}
-                  alt=""
-                  className="scale-y-32 bottom-0 h-32 w-96 rounded"
-                />
-              </div>
-            );
-          })}
-        </div>
+        <a className="text-4xl">
+          <Link href="/eng">en</Link>
+        </a>
+        <a className="text-4xl">
+          <Link href="/pl">pl</Link>
+        </a>
       </main>
     </>
   );
