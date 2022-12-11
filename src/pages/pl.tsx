@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { env } from "../env/client.mjs";
 const Home: NextPage = () => {
   const apikey = env.NEXT_PUBLIC_KEY;
-  const url = `https://newsapi.org/v2/everything?q=bbc-news&language=en&sortBy=publishedAt&apiKey=${apikey}`;
+  const url = `https://newsapi.org/v2/everything?q=bbc-news&language=pl&sortBy=publishedAt&apiKey=${apikey}`;
   const [articles, setArticles] = useState([
     {
       title: "example",
@@ -60,10 +60,10 @@ const Home: NextPage = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  source{" "}
+                  źródło{" "}
                 </a>
                 <a>
-                  - {article.source.name} author: {article.author}
+                  - {article.source.name} autor: {article.author}
                 </a>
                 <img
                   src={article.urlToImage}
