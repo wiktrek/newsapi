@@ -40,12 +40,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <a className="text-4xl">
+        <a className="text-4xl text-white">
           <Link href="/eng">en</Link>
         </a>
-        <a className="text-4xl">
+        <a className="text-4xl text-white">
           <Link href="/pl">pl</Link>
         </a>
+        <a className="text-4xl text-white">working on the ui</a>
       </main>
     </>
   );
