@@ -1,37 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import axios from "axios";
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link.js";
-import { useEffect, useState } from "react";
-import { env } from "../env/client.mjs";
 const Home: NextPage = () => {
-  const apikey = env.NEXT_PUBLIC_KEY;
-  const url = `https://newsapi.org/v2/everything?q=bbc-news&language=en&sortBy=publishedAt&apiKey=${apikey}`;
-  const [articles, setArticles] = useState([
-    {
-      title: "example",
-      author: "example",
-      description: "example",
-      publishedAt: "example",
-      source: {
-        id: "example",
-        name: "example",
-      },
-      url: "https://example.com",
-      urlToImage: "https://example.com",
-    },
-  ]);
-  useEffect(() => {
-    const getArticles = async () => {
-      const res = await axios.get(url);
-      setArticles(res.data.articles);
-    };
-    getArticles();
-    console.log(articles);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <>
       <Head>
